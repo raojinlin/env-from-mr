@@ -30,7 +30,7 @@ func main() {
 
 	flag.Parse()
 
-	// 没有知道ID，取环境变量CI_MERGE_REQUEST_IID
+	// 没有指定ID，取环境变量CI_MERGE_REQUEST_IID
 	if mergeRequestID == 0 {
 		id := os.Getenv("CI_MERGE_REQUEST_IID")
 		if id == "" {
