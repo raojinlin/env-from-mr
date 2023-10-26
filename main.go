@@ -30,6 +30,24 @@ func main() {
 
 	flag.Parse()
 
+	if baseUrl == "" {
+		fmt.Println("GitLab url required.")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	if token == "" {
+		fmt.Println("GitLab access token required.")
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	if projectID == "" {
+		fmt.Println("GitLab project id required.")
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	// 没有指定ID，取环境变量CI_MERGE_REQUEST_IID
 	if mergeRequestID == 0 {
 		id := os.Getenv("CI_MERGE_REQUEST_IID")
