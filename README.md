@@ -7,7 +7,7 @@
 你可以通过以下方式获取`env-from-mr`：
 
 ```shell
-go get github.com/raojinlin/env-from-mr
+go install github.com/raojinlin/env-from-mr
 ```
 
 ## 使用
