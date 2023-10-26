@@ -42,7 +42,7 @@ localhost
 pages-job:
   stage: deploy
   script:
-    - eval $(env-from-mr -mr-iid 123 -pid $CI_MERGE_REQUEST_IID -token yourtoken -url yourgitlaburl)
+    - eval $(env-from-mr -mr-iid $CI_MERGE_REQUEST_IID -pid $CI_PROJECT_ID -url $CI_SERVER_URL -token yourtoken)
     - echo $ENV_A
     - echo $SVC_A_HOST
 ```
